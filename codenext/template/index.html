@@ -1,0 +1,30 @@
+{% block content%}
+
+    <h2>Check next week's Sales</h2>
+
+    <h3>Please enter details:</h3>
+    <br>
+   
+    <form method="post" enctype="multipart/form-data" action="predictSales">
+    
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">Week:</label> </div> <input name="WeekVal" type="text" value={{temp.Week}}><br><br>
+ 
+ 
+ 
+ <br>
+
+ {%  if scoreval  %}
+ <h1>Our Total Sales will be {{scoreval}}</h1>
+ </h3>
+ <input type="hidden" id="lname" name="Total_Sales" value={{scoreval}}>
+ <input type="submit" value="Submit" ></div>
+ {% else%}
+ <input type="submit" value="Submit" ></div>
+ {% endif %}
+
+</form>
+<br>
+
+
+{% endblock %}
